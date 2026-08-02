@@ -4,127 +4,72 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
 <meta name="theme-color" content="#eef1f7"/>
-<meta name="mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<meta name="apple-mobile-web-app-title" content="FORGE"/>
 <title>FORGE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#eef1f7;color:#1d2430;font-family:'Courier New',monospace;overscroll-behavior:none}
 #root{min-height:100vh}
-#loader{position:fixed;inset:0;background:#eef1f7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:9999}
-.ld-t{color:#e63030;font-size:32px;font-weight:900;letter-spacing:5px;text-shadow:0 0 30px #e6303066}
-.ld-sub{color:#8a93a6;font-size:9px;letter-spacing:2px;text-transform:uppercase}
-.ld-bar{width:160px;height:3px;background:#e3e8f0;border-radius:2px;overflow:hidden}
-.ld-fill{height:100%;background:linear-gradient(90deg,#e63030,#ff6b35);border-radius:2px;width:0;transition:width 0.4s}
-.ld-err{display:none;text-align:center;padding:20px;max-width:300px}
-::-webkit-scrollbar{width:4px;height:4px}
-::-webkit-scrollbar-thumb{background:#8a93a6;border-radius:2px}
-input,select,textarea{background:#f2f4f9;border:1px solid #cbd2de;color:#1d2430;font-family:'Courier New',monospace;border-radius:5px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:#e63030;box-shadow:0 0 0 2px rgba(230,48,48,.15)}
-input::placeholder,textarea::placeholder{color:#9aa3b3}
-select option{background:#f2f4f9;color:#1d2430}
-button{-webkit-tap-highlight-color:transparent}
-button:active{opacity:.8}
-@keyframes b0{0%,80%,100%{transform:scale(0)}40%{transform:scale(1.2)}}
-@keyframes b1{0%,80%,100%{transform:scale(0)}40%{transform:scale(1.2)}}
-@keyframes b2{0%,80%,100%{transform:scale(0)}40%{transform:scale(1.2)}}
 </style>
 </head>
 <body>
-<div id="root">
-  <div id="loader">
-    <div class="ld-t">FORGE</div>
-    <div class="ld-bar"><div class="ld-fill" id="ldFill"></div></div>
-    <div class="ld-sub" id="ldStatus">Başlatılıyor...</div>
-    <div class="ld-err" id="ldErr">
-      <div style="color:#e63030;font-size:11px;margin-bottom:8px">⚠️ Bağlantı sorunu</div>
-      <div style="color:#6b7280;font-size:9px;line-height:1.8">Kütüphane yüklenemedi.<br>İnternet bağlantınızı kontrol edin.</div>
-      <button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;background:#e63030;border:none;color:#fff;border-radius:5px;font-family:monospace;cursor:pointer;font-size:10px">🔄 Tekrar Dene</button>
-    </div>
-  </div>
-</div>
+<div id="root"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
 <script>
-(function(){
-  var fill=document.getElementById('ldFill');
-  var stat=document.getElementById('ldStatus');
-  var errDiv=document.getElementById('ldErr');
-  var bar=document.querySelector('.ld-bar');
+var R = "#e63030";
+var FT = "'Courier New',monospace";
 
-  function setProgress(pct,msg){fill.style.width=pct+'%';stat.textContent=msg;}
-  function showError(){errDiv.style.display='block';bar.style.display='none';stat.style.display='none';}
-
-  function loadScript(urls,idx,onOk,onFail){
-    if(idx>=urls.length){onFail();return;}
-    var done=false;
-    var s=document.createElement('script');
-    var t=setTimeout(function(){
-      if(done)return;done=true;
-      s.onload=s.onerror=null;
-      loadScript(urls,idx+1,onOk,onFail);
-    },20000);
-    s.onload=function(){if(done)return;done=true;clearTimeout(t);onOk();};
-    s.onerror=function(){if(done)return;done=true;clearTimeout(t);loadScript(urls,idx+1,onOk,onFail);};
-    s.src=urls[idx];
-    document.head.appendChild(s);
-  }
-
-  var libs=[
-    {n:'React (1/4)',u:['https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js','https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js','https://unpkg.com/react@18.2.0/umd/react.production.min.js']},
-    {n:'ReactDOM (2/4)',u:['https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js','https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js','https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js']},
-    {n:'PropTypes (3/4)',u:['https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js','https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js']},
-    {n:'Recharts (4/4)',u:['https://cdn.jsdelivr.net/npm/recharts@2.10.4/umd/Recharts.js','https://unpkg.com/recharts@2.10.4/umd/Recharts.js']}
-  ];
-  var steps=[10,40,70,88];
-
-  function next(i){
-    if(i>=libs.length){
-      setProgress(95,'Uygulama başlatılıyor...');
-      setTimeout(function(){
-        try{
-          var s=document.createElement('script');
-          s.textContent=window.__A__;
-          document.head.appendChild(s);
-          setTimeout(function(){
-            var l=document.getElementById('loader');
-            if(l)l.style.display='none';
-          },300);
-        }catch(e){stat.textContent='Hata: '+e.message;}
-      },50);
-      return;
+var LS = {
+    get: function(e) {
+        try {
+            var t = localStorage.getItem(e);
+            return t ? JSON.parse(t) : null;
+        } catch (err) {
+            return null;
+        }
     }
-    setProgress(steps[i],libs[i].n+' yükleniyor...');
-    loadScript(libs[i].u,0,function(){next(i+1);},showError);
-  }
-  next(0);
-})();
-</script>
-<script>window.__A__="function _typeof(e) {\n    return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function(e) {\n        return typeof e\n    } : function(e) {\n        return e && \"function\" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? \"symbol\" : typeof e\n    }, _typeof(e)\n}\n\nfunction _regenerator() {\n    /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */\n    var e, t, a = \"function\" == typeof Symbol ? Symbol : {},\n        n = a.iterator || \"@@iterator\",\n        r = a.toStringTag || \"@@toStringTag\";\n\n    function i(a, n, r, i) {\n        var c = n && n.prototype instanceof l ? n : l,\n            s = Object.create(c.prototype);\n        return _regeneratorDefine2(s, \"_invoke\", function(a, n, r) {\n            var i, l, c, s = 0,\n                d = r || [],\n                u = !1,\n                m = {\n                    p: 0,\n                    n: 0,\n                    v: e,\n                    a: p,\n                    f: p.bind(e, 4),\n                    d: function(t, a) {\n                        return i = t, l = 0, c = e, m.n = a, o\n                    }\n                };\n\n            function p(a, n) {\n                for (l = a, c = n, t = 0; !u && s && !r && t < d.length; t++) {\n                    var r, i = d[t],\n                        p = m.p,\n                        f = i[2];\n                    a > 3 ? (r = f === n) && (c = i[(l = i[4]) ? 5 : (l = 3, 3)], i[4] = i[5] = e) : i[0] <= p && ((r = a < 2 && p < i[1]) ? (l = 0, m.v = n, m.n = i[1]) : p < f && (r = a < 3 || i[0] > n || n > f) && (i[4] = a, i[5] = n, m.n = f, l = 0))\n                }\n                if (r || a > 1) return o;\n                throw u = !0, n\n            }\n            return function(r, d, f) {\n                if (s > 1) throw TypeError(\"Generator is already running\");\n                for (u && 1 === d && p(d, f), l = d, c = f;\n                    (t = l < 2 ? e : c) || !u;) {\n                    i || (l ? l < 3 ? (l > 1 && (m.n = -1), p(l, c)) : m.n = c : m.v = c);\n                    try {\n                        if (s = 2, i) {\n                            if (l || (r = \"next\"), t = i[r]) {\n                                if (!(t = t.call(i, c))) throw TypeError(\"iterator result is not an object\");\n                                if (!t.done) return t;\n                                c = t.value, l < 2 && (l = 0)\n                            } else 1 === l && (t = i.return) && t.call(i), l < 2 && (c = TypeError(\"The iterator does not provide a '\" + r + \"' method\"), l = 1);\n                            i = e\n                        } else if ((t = (u = m.n < 0) ? c : a.call(n, m)) !== o) break\n                    } catch (t) {\n                        i = e, l = 1, c = t\n                    } finally {\n                        s = 1\n                    }\n                }\n                return {\n                    value: t,\n                    done: u\n                }\n            }\n        }(a, r, i), !0), s\n    }\n    var o = {};\n\n    function l() {}\n\n    function c() {}\n\n    function s() {}\n    t = Object.getPrototypeOf;\n    var d = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function() {\n            return this\n        }), t),\n        u = s.prototype = l.prototype = Object.create(d);\n\n    function m(e) {\n        return Object.setPrototypeOf ? Object.setPrototypeOf(e, s) : (e.__proto__ = s, _regeneratorDefine2(e, r, \"GeneratorFunction\")), e.prototype = Object.create(u), e\n    }\n    return c.prototype = s, _regeneratorDefine2(u, \"constructor\", s), _regeneratorDefine2(s, \"constructor\", c), c.displayName = \"GeneratorFunction\", _regeneratorDefine2(s, r, \"GeneratorFunction\"), _regeneratorDefine2(u), _regeneratorDefine2(u, r, \"Generator\"), _regeneratorDefine2(u, n, function() {\n        return this\n    }), _regeneratorDefine2(u, \"toString\", function() {\n        return \"[object Generator]\"\n    }), (_regenerator = function() {\n        return {\n            w: i,\n            m: m\n        }\n    })()\n}\n\nfunction _regeneratorDefine2(e, t, a, n) {\n    var r = Object.defineProperty;\n    try {\n        r({}, \"\", {})\n    } catch (e) {\n        r = 0\n    }\n    _regeneratorDefine2 = function(e, t, a, n) {\n        function i(t, a) {\n            _regeneratorDefine2(e, t, function(e) {\n                return this._invoke(t, a, e)\n            })\n        }\n        t ? r ? r(e, t, {\n            value: a,\n            enumerable: !n,\n            configurable: !n,\n            writable: !n\n        }) : e[t] = a : (i(\"next\", 0), i(\"throw\", 1), i(\"return\", 2))\n    }, _regeneratorDefine2(e, t, a, n)\n}\n\nfunction asyncGeneratorStep(e, t, a, n, r, i, o) {\n    try {\n        var l = e[i](o),\n            c = l.value\n    } catch (e) {\n        return void a(e)\n    }\n    l.done ? t(c) : Promise.resolve(c).then(n, r)\n}\n\nfunction _asyncToGenerator(e) {\n    return function() {\n        var t = this,\n            a = arguments;\n        return new Promise(function(n, r) {\n            var i = e.apply(t, a);\n\n            function o(e) {\n                asyncGeneratorStep(i, n, r, o, l, \"next\", e)\n            }\n\n            function l(e) {\n                asyncGeneratorStep(i, n, r, o, l, \"throw\", e)\n            }\n            o(void 0)\n        })\n    }\n}\n\nfunction ownKeys(e, t) {\n    var a = Object.keys(e);\n    if (Object.getOwnPropertySymbols) {\n        var n = Object.getOwnPropertySymbols(e);\n        t && (n = n.filter(function(t) {\n            return Object.getOwnPropertyDescriptor(e, t).enumerable\n        })), a.push.apply(a, n)\n    }\n    return a\n}\n\nfunction _objectSpread(e) {\n    for (var t = 1; t < arguments.length; t++) {\n        var a = null != arguments[t] ? arguments[t] : {};\n        t % 2 ? ownKeys(Object(a), !0).forEach(function(t) {\n            _defineProperty(e, t, a[t])\n        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a)) : ownKeys(Object(a)).forEach(function(t) {\n            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))\n        })\n    }\n    return e\n}\n\nfunction _defineProperty(e, t, a) {\n    return (t = _toPropertyKey(t)) in e ? Object.defineProperty(e, t, {\n        value: a,\n        enumerable: !0,\n        configurable: !0,\n        writable: !0\n    }) : e[t] = a, e\n}\n\nfunction _toPropertyKey(e) {\n    var t = _toPrimitive(e, \"string\");\n    return \"symbol\" == _typeof(t) ? t : t + \"\"\n}\n\nfunction _toPrimitive(e, t) {\n    if (\"object\" != _typeof(e) || !e) return e;\n    var a = e[Symbol.toPrimitive];\n    if (void 0 !== a) {\n        var n = a.call(e, t || \"default\");\n        if (\"object\" != _typeof(n)) return n;\n        throw new TypeError(\"@@toPrimitive must return a primitive value.\")\n    }\n    return (\"string\" === t ? String : Number)(e)\n}\n\nfunction _slicedToArray(e, t) {\n    return _arrayWithHoles(e) || _iterableToArrayLimit(e, t) || _unsupportedIterableToArray(e, t) || _nonIterableRest()\n}\n\nfunction _nonIterableRest() {\n    throw new TypeError(\"Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\")\n}\n\nfunction _iterableToArrayLimit(e, t) {\n    var a = null == e ? null : \"undefined\" != typeof Symbol && e[Symbol.iterator] || e[\"@@iterator\"];\n    if (null != a) {\n        var n, r, i, o, l = [],\n            c = !0,\n            s = !1;\n        try {\n            if (i = (a = a.call(e)).next, 0 === t) {\n                if (Object(a) !== a) return;\n                c = !1\n            } else\n                for (; !(c = (n = i.call(a)).done) && (l.push(n.value), l.length !== t); c = !0);\n        } catch (e) {\n            s = !0, r = e\n        } finally {\n            try {\n                if (!c && null != a.return && (o = a.return(), Object(o) !== o)) return\n            } finally {\n                if (s) throw r\n            }\n        }\n        return l\n    }\n}\n\nfunction _arrayWithHoles(e) {\n    if (Array.isArray(e)) return e\n}\n\nfunction _toConsumableArray(e) {\n    return _arrayWithoutHoles(e) || _iterableToArray(e) || _unsupportedIterableToArray(e) || _nonIterableSpread()\n}\n\nfunction _nonIterableSpread() {\n    throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\")\n}\n\nfunction _unsupportedIterableToArray(e, t) {\n    if (e) {\n        if (\"string\" == typeof e) return _arrayLikeToArray(e, t);\n        var a = {}.toString.call(e).slice(8, -1);\n        return \"Object\" === a && e.constructor && (a = e.constructor.name), \"Map\" === a || \"Set\" === a ? Array.from(e) : \"Arguments\" === a || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a) ? _arrayLikeToArray(e, t) : void 0\n    }\n}\n\nfunction _iterableToArray(e) {\n    if (\"undefined\" != typeof Symbol && null != e[Symbol.iterator] || null != e[\"@@iterator\"]) return Array.from(e)\n}\n\nfunction _arrayWithoutHoles(e) {\n    if (Array.isArray(e)) return _arrayLikeToArray(e)\n}\n\nfunction _arrayLikeToArray(e, t) {\n    (null == t || t > e.length) && (t = e.length);\n    for (var a = 0, n = Array(t); a < t; a++) n[a] = e[a];\n    return n\n}\nvar _React = React,\n    useState = _React.useState,\n    useEffect = _React.useEffect,\n    useMemo = _React.useMemo,\n    useCallback = _React.useCallback,\n    useRef = _React.useRef,\n    _window$Recharts = window.Recharts || {},\n    AreaChart = _window$Recharts.AreaChart || function() { return null; },\n    Area = _window$Recharts.Area || function() { return null; },\n    LineChart = _window$Recharts.LineChart || function() { return null; },\n    Line = _window$Recharts.Line || function() { return null; },\n    BarChart = _window$Recharts.BarChart || function() { return null; },\n    Bar = _window$Recharts.Bar || function() { return null; },\n    XAxis = _window$Recharts.XAxis || function() { return null; },\n    YAxis = _window$Recharts.YAxis || function() { return null; },\n    CartesianGrid = _window$Recharts.CartesianGrid || function() { return null; },\n    Tooltip = _window$Recharts.Tooltip || function() { return null; },\n    ResponsiveContainer = _window$Recharts.ResponsiveContainer || function(p) { return p.children; },\n    RadarChart = _window$Recharts.RadarChart || function() { return null; },\n    Radar = _window$Recharts.Radar || function() { return null; },\n    PolarGrid = _window$Recharts.PolarGrid || function() { return null; },\n    PolarAngleAxis = _window$Recharts.PolarAngleAxis || function() { return null; },\n    R = \"#e63030\",\n    BG = \"#eef1f7\",\n    CARD = \"#ffffff\",\n    BD = \"#dde2ec\",\n    DM = \"#6b7280\",\n    TX = \"#1d2430\",\n    FT = \"'Courier New',monospace\",\n    GREEN = \"#22c55e\",\n    ORANGE = \"#f97316\",\n    BLUE = \"#3b82f6\",\n    PURPLE = \"#a855f7\",\n    YELLOW = \"#eab308\",\n    LS = {\n        get: function(e) {\n            try {\n                var t = localStorage.getItem(e);\n                return t ? JSON.parse(t) : null\n            } catch (e) {\n                return null\n            }\n        },\n        set: function(e, t) {\n            try {\n                localStorage.setItem(e, JSON.stringify(t))\n            } catch (e) {}\n        }\n    },\n    YT = {\n        bench: { id: \"rT7DgCr-3pg\", t: \"Bench Press\" },\n        row_a: { id: \"FWJR5Ve8bnQ\", t: \"Barbell Row\" },\n        ohp: { id: \"2yjwXTZQDDI\", t: \"DB Shoulder Press\" },\n        lat_a: { id: \"CAwf7n6Luuc\", t: \"Lat Pulldown\" },\n        lateral: { id: \"3VcKaXpzqRo\", t: \"Lateral Raise\" },\n        curl_a: { id: \"ykJmrZ5v0Oo\", t: \"Cable Curl\" },\n        tri_a: { id: \"2-LAMcpzODU\", t: \"Triceps Pushdown\" },\n        squat: { id: \"ultWZbUMPL8\", t: \"Back Squat\" },\n        legpress_a: { id: \"IZxyjW7SKSA\", t: \"Leg Press\" },\n        rdl: { id: \"7j-2GC7tft4\", t: \"Romanian Deadlift\" },\n        legext_a: { id: \"YyvSfVjQeL0\", t: \"Leg Extension\" },\n        legcurl_a: { id: \"1Tq3QdYUuHs\", t: \"Leg Curl\" },\n        calf_a: { id: \"gwLzBJYoWlA\", t: \"Calf Raise\" },\n        plank: { id: \"ASdvN_XEl_c\", t: \"Plank\" },\n        incline: { id: \"DbFgADa2PL8\", t: \"Incline DB Press\" },\n        cable_row: { id: \"GZbfZ033f74\", t: \"Cable Row\" },\n        smith_ohp: { id: \"UITU0-Ufzoc\", t: \"Smith OHP\" },\n        lat_b: { id: \"CAwf7n6Luuc\", t: \"Lat Pulldown Wide\" },\n        pecdeck: { id: \"Z57CtFmRMxA\", t: \"Pec Deck\" },\n        rear_delt: { id: \"EA7u4Q_8HQ0\", t: \"Rear Delt Fly\" },\n        incline_curl: { id: \"soxrZlIl35U\", t: \"Incline Curl\" },\n        cable_ext: { id: \"_gsUck-7f74\", t: \"Cable Overhead Ext\" },\n        deadlift: { id: \"r4MzxtBKyNE\", t: \"Deadlift\" },\n        bss: { id: \"2C-uNgKwPLE\", t: \"Bulgarian Split Squat\" },\n        hip_thrust: { id: \"xDmFkJxPAoQ\", t: \"Hip Thrust\" },\n        pullup: { id: \"eGo4OiyFMDo\", t: \"Pull-Up\" },\n        hammer_curl: { id: \"TwD7yMuGoxc\", t: \"Hammer Curl\" },\n        face_pull: { id: \"rep-GVyznu8\", t: \"Face Pull\" },\n        skull_crusher: { id: \"d7jEQ7fNYBc\", t: \"Skull Crusher\" },\n        nordic: { id: \"d3W1e3SRRvY\", t: \"Nordic Curl\" }\n    },\n    MUSCLE_MAP = {\n        bench: \"Göğüs\", incline_bb: \"Göğüs\", decline_bb: \"Göğüs\", incline: \"Göğüs\", db_flat: \"Göğüs\", decline_db: \"Göğüs\", db_fly: \"Göğüs\", incline_fly: \"Göğüs\", cable_fly: \"Göğüs\", low_cable_fly: \"Göğüs\", high_cable_fly: \"Göğüs\", pecdeck: \"Göğüs\", machine_chest: \"Göğüs\", smith_bench: \"Göğüs\", pushup_w: \"Göğüs\", dips_chest: \"Göğüs\", row_a: \"Sırt\", cable_row: \"Sırt\", lat_a: \"Sırt\", lat_b: \"Sırt\", lat_neutral: \"Sırt\", deadlift: \"Sırt\", pullup: \"Sırt\", seated_row: \"Sırt\", one_arm_row: \"Sırt\", tbar_row: \"Sırt\", pendlay_row: \"Sırt\", machine_row: \"Sırt\", straight_arm_pd: \"Sırt\", rack_pull: \"Sırt\", hyperext: \"Sırt\", inverted_row: \"Sırt\", face_pull: \"Omuz\", chest_supported_row: \"Sırt\", ohp: \"Omuz\", bb_ohp: \"Omuz\", smith_ohp: \"Omuz\", lateral: \"Omuz\", cable_lateral: \"Omuz\", db_front_raise: \"Omuz\", cable_front_raise: \"Omuz\", rear_delt: \"Omuz\", cable_rear_delt: \"Omuz\", upright_row: \"Omuz\", machine_ohp: \"Omuz\", arnold_press: \"Omuz\", db_shrug: \"Omuz\", bb_shrug: \"Omuz\", machine_lateral: \"Omuz\", curl_a: \"Biceps\", incline_curl: \"Biceps\", hammer_curl: \"Biceps\", barbell_curl: \"Biceps\", ez_curl: \"Biceps\", preacher_curl: \"Biceps\", conc_curl: \"Biceps\", machine_curl: \"Biceps\", spider_curl: \"Biceps\", reverse_curl: \"Biceps\", rope_hammer: \"Biceps\", cross_curl: \"Biceps\", tri_a: \"Triceps\", tri_rope: \"Triceps\", cable_ext: \"Triceps\", skull_crusher: \"Triceps\", dips: \"Triceps\", db_overhead_ext: \"Triceps\", cgbp: \"Triceps\", diamond_pushup: \"Triceps\", rev_pushdown: \"Triceps\", machine_tri: \"Triceps\", tate_press: \"Triceps\", squat: \"Quadriceps\", front_squat: \"Quadriceps\", goblet_squat: \"Quadriceps\", smith_squat: \"Quadriceps\", legpress_a: \"Quadriceps\", legpress_b: \"Quadriceps\", legext_a: \"Quadriceps\", bss: \"Quadriceps\", hack_squat: \"Quadriceps\", lunge: \"Quadriceps\", walking_lunge: \"Quadriceps\", step_up: \"Quadriceps\", sissy_squat: \"Quadriceps\", narrow_squat: \"Quadriceps\", rdl: \"Hamstring\", legcurl_a: \"Hamstring\", legcurl_b: \"Hamstring\", nordic: \"Hamstring\", good_morning: \"Hamstring\", sumo_dl: \"Hamstring\", sl_rdl: \"Hamstring\", cable_pull_through: \"Hamstring\", hip_thrust: \"Kalça\", hip_ab: \"Kalça\", hip_ad: \"Kalça\", cable_kickback: \"Kalça\", glute_bridge: \"Kalça\", sumo_squat: \"Kalça\", donkey_kick: \"Kalça\", calf_a: \"Baldır\", calf_b: \"Baldır\", standing_calf: \"Baldır\", seated_calf: \"Baldır\", donkey_calf: \"Baldır\", sl_calf: \"Baldır\", plank: \"Core\", side_bend: \"Core\", ab_crunch: \"Core\", cable_crunch: \"Core\", russian_twist: \"Core\", hanging_lr: \"Core\", decline_situp: \"Core\", ab_rollout: \"Core\", pallof_press: \"Core\", dead_bug: \"Core\", side_plank: \"Core\", mountain_climber: \"Core\", floor_press: \"Göğüs\", db_floor_press: \"Göğüs\", machine_incline: \"Göğüs\", smith_incline: \"Göğüs\", svend_press: \"Göğüs\", band_chest_press: \"Göğüs\", single_cable_press: \"Göğüs\", cable_press: \"Göğüs\", incline_pushup: \"Göğüs\", decline_pushup: \"Göğüs\", archer_pushup: \"Göğüs\", deficit_pushup: \"Göğüs\", meadows_row: \"Sırt\", seal_row: \"Sırt\", kroc_row: \"Sırt\", db_pullover: \"Sırt\", machine_pullover: \"Sırt\", single_lat_pd: \"Sırt\", band_pulldown: \"Sırt\", kb_row: \"Sırt\", trx_row: \"Sırt\", gorilla_row: \"Sırt\", trap_bar_dl: \"Sırt\", deficit_dl: \"Sırt\", snatch_grip_dl: \"Sırt\", neutral_pullup: \"Sırt\", landmine_press: \"Omuz\", z_press: \"Omuz\", bts_press: \"Omuz\", push_press: \"Omuz\", leaning_lateral: \"Omuz\", plate_front_raise: \"Omuz\", band_lateral: \"Omuz\", kb_press: \"Omuz\", pike_pushup: \"Omuz\", hspu: \"Omuz\", reverse_pecdeck: \"Omuz\", cable_y_raise: \"Omuz\", barbell_front_raise: \"Omuz\", db_curl: \"Biceps\", zottman_curl: \"Biceps\", drag_curl: \"Biceps\", bayesian_curl: \"Biceps\", band_curl: \"Biceps\", chinup_biceps: \"Biceps\", high_cable_curl: \"Biceps\", waiter_curl: \"Biceps\", twenty_ones: \"Biceps\", jm_press: \"Triceps\", board_press: \"Triceps\", db_kickback: \"Triceps\", cable_kickback_tri: \"Triceps\", band_pushdown: \"Triceps\", bench_dips: \"Triceps\", single_pushdown: \"Triceps\", kettlebell_skull: \"Triceps\", california_press: \"Triceps\", pendulum_squat: \"Quadriceps\", belt_squat: \"Quadriceps\", pistol_squat: \"Quadriceps\", box_squat: \"Quadriceps\", zercher_squat: \"Quadriceps\", spanish_squat: \"Quadriceps\", reverse_lunge: \"Quadriceps\", curtsy_lunge: \"Quadriceps\", wall_sit: \"Quadriceps\", cyclist_squat: \"Quadriceps\", leg_press_single: \"Quadriceps\", smith_lunge: \"Quadriceps\", stiff_leg_dl: \"Hamstring\", ghr: \"Hamstring\", slider_curl: \"Hamstring\", band_leg_curl: \"Hamstring\", single_leg_curl: \"Hamstring\", kb_swing: \"Hamstring\", razor_curl: \"Hamstring\", sl_hip_thrust: \"Kalça\", bstance_hip_thrust: \"Kalça\", frog_pump: \"Kalça\", banded_walk: \"Kalça\", glute_kickback_machine: \"Kalça\", reverse_hyper: \"Kalça\", monster_walk: \"Kalça\", hip_thrust_machine: \"Kalça\", copenhagen: \"Kalça\", standing_calf_machine: \"Baldır\", tibialis_raise: \"Baldır\", seated_db_calf: \"Baldır\", jump_rope: \"Baldır\", calf_press_hack: \"Baldır\", hanging_knee_raise: \"Core\", toes_to_bar: \"Core\", cable_woodchop: \"Core\", bicycle_crunch: \"Core\", reverse_crunch: \"Core\", v_up: \"Core\", hollow_hold: \"Core\", l_sit: \"Core\", weighted_crunch: \"Core\", flutter_kick: \"Core\", bird_dog: \"Core\", copenhagen_plank: \"Core\", farmer_carry: \"Core\", suitcase_carry: \"Core\", wrist_curl: \"Ön Kol\", rev_wrist_curl: \"Ön Kol\", wrist_roller: \"Ön Kol\", plate_pinch: \"Ön Kol\", behind_back_wrist: \"Ön Kol\", db_wrist_curl: \"Ön Kol\", power_clean: \"Sırt\", hang_clean: \"Sırt\", power_snatch: \"Sırt\", clean_and_press: \"Omuz\", thruster: \"Omuz\", wall_ball: \"Quadriceps\", burpee: \"Quadriceps\", battle_rope: \"Omuz\"\n    },\n    DEFAULT_PROG = {\n        \"Upper A\": {\n            label: \"Üst Gövde A\",\n            day: \"Pazartesi\",\n            exercises: [\n                { id: \"bench\", name: \"Barbell Bench Press\", sets: 4, reps: \"6-8\", rir: \"2-3\", rest: \"3-4 dk\" },\n                { id: \"row_a\", name: \"Barbell Row\", sets: 4, reps: \"6-8\", rir: \"2-3\", rest: \"3 dk\" },\n                { id: \"ohp\", name: \"Dumbbell Shoulder Press\", sets: 3, reps: \"8-10\", rir: \"2\", rest: \"2-3 dk\" },\n                { id: \"lat_a\", name: \"Lat Pulldown (supinated)\", sets: 3, reps: \"10-12\", rir: \"1-2\", rest: \"2 dk\" },\n                { id: \"lateral\", name: \"Dumbbell Lateral Raise\", sets: 3, reps: \"15-20\", rir: \"0-1\", rest: \"90 sn\" },\n                { id: \"curl_a\", name: \"Cable Curl\", sets: 2, reps: \"12-15\", rir: \"0-1\", rest: \"90 sn\" },\n                { id: \"tri_a\", name: \"Triceps Pushdown\", sets: 2, reps: \"12-15\", rir: \"0-1\", rest: \"90 sn\" }\n            ]\n        }\n    },\n    calc1RM = function(e, t) { return t <= 1 ? e : +(e * (1 + t / 30)).toFixed(1); };
+};
+
+var DEFAULT_PROG = {
+    "Upper A": {
+        label: "Üst Gövde A",
+        day: "Pazartesi",
+        exercises: [
+            { id: "bench", name: "Barbell Bench Press", sets: 4, reps: "6-8", rir: "2-3" },
+            { id: "row_a", name: "Barbell Row", sets: 4, reps: "6-8", rir: "2-3" },
+            { id: "ohp", name: "Dumbbell Shoulder Press", sets: 3, reps: "8-10", rir: "2" }
+        ]
+    }
+};
 
 function App() {
-    var _React = React, useState = _React.useState, useEffect = _React.useEffect;
+    var useState = React.useState;
     var _h = React.createElement;
 
-    var _b = useState(function() { return LS.get(\"fg3_prog\") || DEFAULT_PROG; }), h = _b[0], v = _b[1];
-    var _y = useState(\"Upper A\"), y = _y[0], k = _y[1];
+    var _b = useState(function() { return LS.get("fg3_prog") || DEFAULT_PROG; });
+    var h = _b[0];
+    var _y = useState("Upper A");
+    var y = _y[0];
 
-    var currentProg = h[y] || Object.values(h)[0] || { label: \"Antrenman\", day: \"Gün\", exercises: [] };
+    var currentProg = h[y] || Object.values(h)[0] || { label: "Antrenman", day: "Gün", exercises: [] };
     var safeExercises = (currentProg && currentProg.exercises) ? currentProg.exercises : [];
 
-    return _h(\"div\", { style: { padding: 20, fontFamily: FT } },
-        _h(\"h1\", { style: { color: R } }, \"FORGE APP\"),
-        _h(\"h2\", null, currentProg.label + \" (\" + currentProg.day + \")\"),
-        _h(\"ul\", null,
+    return _h("div", { style: { padding: 20, fontFamily: FT } },
+        _h("h1", { style: { color: R } }, "FORGE APP"),
+        _h("h2", null, currentProg.label + " (" + currentProg.day + ")"),
+        _h("ul", { style: { marginTop: 15, paddingLeft: 20 } },
             safeExercises.map(function(ex, idx) {
-                return _h(\"li\", { key: ex.id || idx, style: { marginBottom: 8 } },
-                    _h(\"b\", null, ex.name), \" - \", ex.sets, \" x \", ex.reps, \" (RIR: \", ex.rir, \")\"
+                return _h("li", { key: ex.id || idx, style: { marginBottom: 8 } },
+                    _h("b", null, ex.name), " - ", ex.sets, " x ", ex.reps, " (RIR: ", ex.rir, ")"
                 );
             })
         )
     );
 }
 
-ReactDOM.createRoot(document.getElementById(\"root\")).render(React.createElement(App));";</script>
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
 </body>
 </html>
