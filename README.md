@@ -13,6 +13,12 @@ Antrenman, beslenme ve toparlanma takibi. Tek HTML dosyası — build yok, npm y
 - **Egzersiz veritabanı** — kas grubu (göğüs, bacak, biceps, hamstring, core…) ve ekipmana (barbell, dumbbell, kablo, band, askı) göre filtreleme, seviye kademeleri
 - **AI Koç** — kendi Anthropic API anahtarınla antrenman ve beslenme yorumu
 
+## Programlar
+
+Uygulamada 6 hazır program şablonu var (**Antrenman → Hazır Program Yükle**). Bunlardan biri iş yerinde öğle arasında uygulanmak üzere ayrıca tasarlandı:
+
+- **[Öğle Arası 3 Gün — Salı / Çarşamba / Cuma](program/ogle-arasi-3-gun.md)** — 1 saatlik pencerede ~50 dk, antagonist süpersetlerle, her kas 2x/hafta. Gerekçeleri ve kaynakları dokümanda.
+
 ## Telefona kurma
 
 Telefonda **Chrome** ile [uygulamayı](https://ykaya105565.github.io/yanithocam/) aç → sağ üst (⋮) → **"Ana ekrana ekle"**.
