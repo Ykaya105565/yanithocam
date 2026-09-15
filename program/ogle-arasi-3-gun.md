@@ -126,6 +126,43 @@ Ana kas gruplarının hepsi 10-14 set bandında — meta-analizlerin "yanıt ver
 
 Rampa setleri sayılmaz. Yüksek yoğunluklu ısınma (%80 civarı) toplam antrenman hacmini %40-60'lık ısınmaya göre artırıyor — son rampa setini hafif tutma.
 
+## Ağırlık önerisi nasıl hesaplanıyor
+
+LOG ekranını açtığında **🎯 Sıradaki** kutusu çıkar. Öneri, o hareket için **son seansın kaydından** ve programdaki hedeften hesaplanır.
+
+**1. Tahmini 1RM (Epley + RIR).** Geçen seansın en iyi setinden:
+
+```
+e1RM = ağırlık × (1 + (tekrar + RIR) / 30)
+```
+
+RIR'i formüle katmak önemli: 35 kg × 8 @ RIR 2 ile 35 kg × 8 @ RIR 0 aynı güç değil. Birincisinde yetmezliğe 10 tekrar vardı, ikincisinde 8. RIR girilmemişse programın hedef RIR'i varsayılır ve kutuda bu belirtilir.
+
+**2. Hedef yük.** Aralığın alt sınırını hedef RIR'de bitirecek ağırlık, aynı formülün tersinden:
+
+```
+hedef yük = e1RM / (1 + (alt sınır + hedef RIR) / 30)
+```
+
+**3. Karar.** Son setin nerede bittiğine göre dört durumdan biri:
+
+| Geçen seans | Öneri | Etiket |
+|---|---|---|
+| Aralığın **üstünü** tamamladın, RIR hedefte veya altında | Hedef yüke çık, tekrar alt sınıra döner | ağırlığı artır |
+| RIR hedeften **2+ yüksek** (çok kolaydı) | Hedef yüke çık, tekrar korunur | yük hafif kalmış |
+| Aralığın **altında** kaldın | Yükü hedef yüke indir | yükü düşür |
+| Aralığın **içindesin** | Aynı ağırlık, +1 tekrar | 1 tekrar ekle |
+
+Bu, klasik **çift ilerlemenin** RIR ile otoregüle edilmiş hâli: aralık içinde tekrar biriktirirsin, üstüne çıkınca yük artar — ama "çok kolaydı" ve "çok ağırdı" durumları da yakalanır.
+
+**4. Yuvarlama.** Öneri salonda var olan kademelere yuvarlanır: barbell / smith / makine / kablo **2,5 kg**, dumbbell / kettlebell / plate **2 kg**. Yüzde tabanlı bir artış ham hâliyle 1,3 kg gibi uygulanamaz sayılar üretirdi.
+
+**5. Güvenlik sınırı.** Tek seansta artış **+%10**, düşüş **−%10** ile sınırlı. Tek bir iyi ya da kötü set, e1RM'i şişirip saçma bir sıçrama önermesin diye.
+
+**İlk kayıtta** geçmiş olmadığı için hesap yapılmaz; kutu hedef tekrar aralığını ve "ısınma setleriyle çıkıp hedef RIR'i yakalayan ağırlıkta kal" yönergesini gösterir. İkinci seanstan itibaren öneri devreye girer.
+
+**Uygula** butonu ağırlık ve tekrar alanlarını doldurur — RIR alanını kasıtlı olarak doldurmaz, çünkü o alan hedefi değil **gerçekleşeni** kaydetmeli.
+
 ## Ekipman yoksa — ikame tablosu
 
 | Program hareketi | Yoksa |
