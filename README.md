@@ -23,7 +23,7 @@ Uygulamada 6 hazır program şablonu var (**Antrenman → Hazır Program Yükle*
 - **Ağırlık önerisi** — LOG ekranı, son seansın kaydından tahmini 1RM çıkarıp bir sonraki ağırlık ve tekrarı hesaplar ve alanları hazır doldurur.
 - **Plaka ve ısınma** — LOG ekranında barbell hareketleri için tek tarafa dizilecek plakalar, her hareket için ısınma rampası.
 - **⇄ Yerinde değiştirme** — istasyon doluysa hareketin yanındaki ⇄ ile aynı kas grubundan başka bir harekete geç; sıra ve set/tekrar reçetesi korunur.
-- **Yedek uyarısı** — 21 günden eski yedekte antrenman ekranının üstünde hatırlatma.
+- **Yedekleme** — yeni seans varsa ve son yedeğin üzerinden 2 gün geçtiyse (ya da 3 seans yedeksiz kaldıysa) antrenman ekranının üstünde tek dokunuşluk **YEDEKLE** butonu çıkar; JSON telefona iner, sayaç sıfırlanır.
 
 ## Telefona kurma
 
