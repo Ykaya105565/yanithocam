@@ -21,6 +21,9 @@ Uygulamada 6 hazır program şablonu var (**Antrenman → Hazır Program Yükle*
 
 - **Egzersiz düzenleme** — gün başlığındaki ✏️ ile hareket ekle / çıkar / sırala. Ekleme ekranında 237 hareketlik kütüphane, ekipman ve kas grubu filtreleri, geçmiş seans sayısı ve o kasın programdaki toplam set sayısı görünür; listede olmayan bir hareketi özel isimle de ekleyebilirsin.
 - **Ağırlık önerisi** — LOG ekranı, son seansın kaydından tahmini 1RM çıkarıp bir sonraki ağırlık ve tekrarı hesaplar ve alanları hazır doldurur.
+- **Plaka ve ısınma** — LOG ekranında barbell hareketleri için tek tarafa dizilecek plakalar, her hareket için ısınma rampası.
+- **⇄ Yerinde değiştirme** — istasyon doluysa hareketin yanındaki ⇄ ile aynı kas grubundan başka bir harekete geç; sıra ve set/tekrar reçetesi korunur.
+- **Yedek uyarısı** — 21 günden eski yedekte antrenman ekranının üstünde hatırlatma.
 
 ## Telefona kurma
 

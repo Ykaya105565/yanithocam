@@ -77,7 +77,7 @@ Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 
 ### İstasyon doluysa
 
-Bekleme. Sırayı bozup sonraki hareketi yap, dolu alete sonra dön. Hiçbiri olmuyorsa ikame tablosundan eşdeğerine geç — kaçırılmış bir set, 10 dakika beklemekten iyidir.
+Bekleme. Sırayı bozup sonraki hareketi yap, dolu alete sonra dön. Hiçbiri olmuyorsa uygulamada hareketin yanındaki **⇄** tuşuna bas: aynı kas grubundaki hareketler listelenir, seçtiğin hareket **yerine geçer** ve set/tekrar/RIR reçetesi aynen korunur. Kaçırılmış bir set, 10 dakika beklemekten iyidir.
 
 ## Haftalık hacim (doğrudan set)
 
