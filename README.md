@@ -19,6 +19,9 @@ Uygulamada 6 hazır program şablonu var (**Antrenman → Hazır Program Yükle*
 
 - **[Öğle Arası 3 Gün — Salı / Çarşamba / Cuma](program/ogle-arasi-3-gun.md)** — 1 saatlik pencerede ~50 dk, antagonist süpersetlerle, her kas 2x/hafta. Gerekçeleri ve kaynakları dokümanda.
 
+- **Egzersiz düzenleme** — gün başlığındaki ✏️ ile hareket ekle / çıkar / sırala. Ekleme ekranında 237 hareketlik kütüphane, ekipman ve kas grubu filtreleri, geçmiş seans sayısı ve o kasın programdaki toplam set sayısı görünür; listede olmayan bir hareketi özel isimle de ekleyebilirsin.
+- **Ağırlık önerisi** — LOG ekranı, son seansın kaydından tahmini 1RM çıkarıp bir sonraki ağırlık ve tekrarı hesaplar ve alanları hazır doldurur.
+
 ## Telefona kurma
 
 Telefonda **Chrome** ile [uygulamayı](https://ykaya105565.github.io/yanithocam/) aç → sağ üst (⋮) → **"Ana ekrana ekle"**.

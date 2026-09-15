@@ -9,81 +9,91 @@
 | Toplam 60 dk, üstü kıyafet değişimi + yürüme | Bell-to-bell hedefi **~50 dk**: 6 dk ısınma + ~44 dk çalışma |
 | Salı ve Çarşamba **arka arkaya** | Salı üst gövde, Çarşamba alt gövde — aynı kas 24 saatte iki kez yüklenmiyor |
 | Haftada 3 seans | Her kas grubu **2x/hafta**: göğüs/sırt Salı+Cuma, bacak Çarşamba+Cuma |
-| Süre dar ama hacim gerekli | **Antagonist süpersetler** — süreyi ~%36 kısaltıyor, hacmi ve adaptasyonu düşürmüyor |
+| **Salon kalabalık, süperset yapılamıyor** | Düz setler, tek istasyon. Aynı anda iki alet tutma yok |
+| Makine tercihi | Ana hareketler makine/kaldıraçlı; kurulum hızlı, spotter gerekmiyor |
 
-## Haftalık yapı
+### Süperset neden çıkarıldı, bedeli ne
 
-| Gün | Odak | Süre |
-|---|---|---|
-| **Salı** | Üst gövde (itiş + çekiş dengeli) | ~50 dk |
-| **Çarşamba** | Alt gövde + core | ~50 dk |
-| **Perşembe** | — (48 saat toparlanma) | |
-| **Cuma** | Tüm vücut (sırt/göğüs 2. doz + eksikler) | ~49 dk |
+İlk sürüm antagonist süpersetler üzerine kuruluydu — 2025 sistematik derlemesi bunların seansı **~%36 kısalttığını** ve hipertrofi/güçte fark yaratmadığını gösteriyor. Ama süperset iki istasyonu aynı anda tutmayı gerektirir; kalabalık bir salonda bu hem pratik değil hem de sıra beklerken ritmi bozar.
+
+Düz setlere geçmenin bedeli **hacim**: aynı 44 dakikaya daha az set sığıyor. Haftalık toplam 55 sete indi (süpersetli sürüm 74 setti). Telafi şöyle yapıldı:
+
+- Dinlenmeler bilimsel alt sınıra çekildi: bileşiklerde **2 dk** (3 dk yerine), izolasyonlarda **60-90 sn**. Schoenfeld'in 1 dk vs 3 dk çalışmasında 1 dakika yetersizdi ama **2 dakika hipertrofi için yeterli**.
+- Set sayısı en çok getirisi olan hareketlerde tutuldu, kol ve baldır gibi dolaylı yük alan kaslarda kısıldı.
+- Sonuç: ana kas gruplarının hepsi hâlâ **9-11 set/hafta** ile meta-analizlerin yanıt aralığı içinde.
+
+## Salondaki aletlere göre seçim
+
+Gönderdiğin fotoğraflardan okuduklarım ve programa nasıl girdikleri:
+
+| Fotoğraftaki alet | Programdaki karşılığı |
+|---|---|
+| Kaldıraçlı (plate-loaded) göğüs/kürek makineleri, yanında dumbbell rafı ve eğimli sehpa | **Machine Chest Press** (Salı), **Machine Row** (Salı), **Incline Dumbbell Press** (Salı) |
+| Ağırlık takozlu kol makinesi (Paramount) | **Machine Bicep Curl** (Salı) |
+| Üstten makaralı lat çekiş istasyonu, geniş bar + diz pedi | **Lat Pulldown** (Salı) |
+
+Kaldıraçlı makineler kalabalık salon için iyi seçim: sıraya girmeden plaka takıp çıkıyorsun, başarısız tekrar riski yok, kurulum saniyeler sürüyor.
+
+> **Bir emin olamadığım nokta:** ikinci fotoğraftaki kol makinesini **biceps curl** olarak okudum (açılı dirsek pedi + öne bakan tutamaklar). Triceps extension makinesi ise söyle, Salı'nın son hareketini ona göre değiştireyim.
+
+Alt gövde aletleri fotoğraflarda yok; Çarşamba günü barbell squat + leg press üzerine kuruldu. Salonda hack squat veya smith varsa ikame tablosundan değiştirebilirsin.
 
 ## Program
 
-Aynı harf = süperset. A1 → A2 → dinlen → tekrar. Bekleme süresi çiftin sonunda.
+Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 
-### SALI — Üst Gövde
-
-| # | Hareket | Set × Tekrar | RIR | Dinlenme |
-|---|---|---|---|---|
-| A1 | Barbell Bench Press | 4 × 5-8 | 2 | 2,5 dk (çift sonunda) |
-| A2 | Lat Pulldown (supinated) | 4 × 8-10 | 2 | 2,5 dk |
-| B1 | Incline Dumbbell Press | 3 × 8-12 | 1-2 | 2 dk |
-| B2 | Chest Supported Row | 3 × 10-12 | 1-2 | 2 dk |
-| C1 | Dumbbell Lateral Raise | 4 × 12-20 | 0-1 | 90 sn |
-| C2 | Face Pull | 3 × 15-20 | 1 | 90 sn |
-| D1 | Cable Curl | 2 × 10-15 | 0-1 | 75 sn |
-| D2 | Triceps Pushdown (halat) | 2 × 10-15 | 0-1 | 75 sn |
-
-### ÇARŞAMBA — Alt Gövde + Core
+### SALI — Üst Gövde (~48 dk)
 
 | # | Hareket | Set × Tekrar | RIR | Dinlenme |
 |---|---|---|---|---|
-| A | Barbell Back Squat | 4 × 5-8 | 2 | 3 dk |
-| — | Pallof Press *(squat aralarında dolgu)* | 3 × 10-12/yan | 2 | — |
-| B1 | Romanian Deadlift | 3 × 8-10 | 2 | 2,5 dk |
-| B2 | Leg Extension | 3 × 12-15 | 1 | 2,5 dk |
-| C1 | Barbell Hip Thrust | 3 × 8-12 | 1 | 2 dk |
-| C2 | Seated Leg Curl | 3 × 10-15 | 1 | 2 dk |
-| D1 | Standing Calf Raise (smith) | 3 × 10-15 | 0-1 | 75 sn |
-| D2 | Hanging Leg Raise | 3 × 8-12 | 1 | 75 sn |
+| 1 | Machine Chest Press | 4 × 5-8 | 2 | 2 dk |
+| 2 | Lat Pulldown (supinated) | 4 × 8-10 | 2 | 2 dk |
+| 3 | Machine Row | 3 × 10-12 | 1-2 | 90 sn |
+| 4 | Incline Dumbbell Press | 3 × 8-12 | 1-2 | 90 sn |
+| 5 | Dumbbell Lateral Raise | 3 × 12-20 | 0-1 | 60 sn |
+| 6 | Machine Bicep Curl | 2 × 10-15 | 0-1 | 60 sn |
 
-Squat aralarındaki 3 dakika boş geçmesin diye Pallof Press "dolgu" olarak yerleştirildi — core çalışır, squat performansını düşürmez.
-
-### CUMA — Tüm Vücut
+### ÇARŞAMBA — Alt Gövde + Core (~50 dk)
 
 | # | Hareket | Set × Tekrar | RIR | Dinlenme |
 |---|---|---|---|---|
-| A1 | Barbell Row | 4 × 6-10 | 2 | 2,5 dk |
-| A2 | Incline Barbell Bench Press | 4 × 6-10 | 2 | 2,5 dk |
-| B1 | Bulgarian Split Squat | 3 × 8-12/bacak | 1-2 | 2 dk |
-| B2 | Lying Leg Curl | 3 × 10-15 | 1 | 2 dk |
-| C1 | Cable Row (close grip) | 3 × 10-12 | 1 | 2 dk |
-| C2 | Dumbbell Lateral Raise | 3 × 12-20 | 0-1 | 2 dk |
-| D1 | Incline Dumbbell Curl | 2 × 10-15 | 0-1 | 75 sn |
-| D2 | Cable Overhead Extension | 2 × 10-15 | 0-1 | 75 sn |
+| 1 | Barbell Back Squat | 4 × 5-8 | 2 | 3 dk |
+| 2 | Romanian Deadlift | 3 × 8-10 | 2 | 2 dk |
+| 3 | Leg Press | 3 × 10-12 | 1 | 2 dk |
+| 4 | Seated Leg Curl | 3 × 10-15 | 1 | 90 sn |
+| 5 | Standing Calf Raise | 2 × 10-15 | 0-1 | 60 sn |
+| 6 | Cable Crunch | 2 × 10-15 | 1 | 60 sn |
 
-Cuma'da dikey itiş (omuz press) yok — Salı'daki 7 itiş seti + Cuma'daki 4 incline set ön omuzu zaten yüklüyor. O dakika yan omuza ve kola aktarıldı.
+### CUMA — Tüm Vücut (~47 dk)
+
+| # | Hareket | Set × Tekrar | RIR | Dinlenme |
+|---|---|---|---|---|
+| 1 | Barbell Row | 4 × 6-10 | 2 | 2 dk |
+| 2 | Incline Barbell Bench Press | 3 × 6-10 | 2 | 2 dk |
+| 3 | Bulgarian Split Squat | 3 × 8-12/bacak | 1-2 | 2 dk |
+| 4 | Lying Leg Curl | 3 × 10-15 | 1 | 90 sn |
+| 5 | Dumbbell Lateral Raise | 3 × 12-20 | 0-1 | 60 sn |
+| 6 | Triceps Pushdown (halat) | 2 × 10-15 | 0-1 | 60 sn |
+
+### İstasyon doluysa
+
+Bekleme. Sırayı bozup sonraki hareketi yap, dolu alete sonra dön. Hiçbiri olmuyorsa ikame tablosundan eşdeğerine geç — kaçırılmış bir set, 10 dakika beklemekten iyidir.
 
 ## Haftalık hacim (doğrudan set)
 
 | Kas | Salı | Çarşamba | Cuma | **Toplam** |
 |---|---|---|---|---|
-| Göğüs | 7 | — | 4 | **11** |
-| Sırt | 7 | — | 7 | **14** |
+| Göğüs | 7 | — | 3 | **10** |
+| Sırt | 7 | — | 4 | **11** |
 | Quadriceps | — | 7 | 3 | **10** |
 | Hamstring | — | 6 | 3 | **9** |
-| Kalça | — | 3 (+dolaylı) | (+dolaylı) | **3+** |
-| Yan omuz | 4 | — | 3 | **7** |
-| Arka omuz | 3 | — | (+kürek çekişler) | **3+** |
-| Biceps | 2 | — | 2 | **4** (+14 çekiş seti dolaylı) |
-| Triceps | 2 | — | 2 | **4** (+11 itiş seti dolaylı) |
-| Baldır | — | 3 | — | **3** |
-| Core | — | 6 | — | **6** |
+| Yan omuz | 3 | — | 3 | **6** |
+| Biceps | 2 | — | — | **2** (+11 çekiş seti dolaylı) |
+| Triceps | — | — | 2 | **2** (+10 itiş seti dolaylı) |
+| Baldır | — | 2 | — | **2** |
+| Core | — | 2 | — | **2** |
 
-Ana kas gruplarının hepsi 10-14 set bandında — meta-analizlerin "yanıt veren" aralığı. Kol ve baldır kasıtlı olarak düşük: 50 dakikaya sığması için bileşik hareketler önceliklendirildi, kollar zaten 25 bileşik setten dolaylı yük alıyor.
+Ana kas gruplarının hepsi 9-11 set bandında — meta-analizlerin "yanıt veren" aralığının (10-20) alt-orta kısmı. Sınırlı zamanda beklenen yer burası; hacmi artırmak istersen dördüncü gün eklemek, seansları uzatmaktan daha verimli olur.
 
 ## Neden böyle — bilimsel gerekçe
 
@@ -97,9 +107,9 @@ Ana kas gruplarının hepsi 10-14 set bandında — meta-analizlerin "yanıt ver
 
 **Yetmezliğe yakınlık (RIR).** 2024 meta-regresyonu: güç kazanımı geniş bir RIR aralığında benzerken, **hipertrofi yetmezliğe yaklaştıkça artıyor** — ama eğri düzleşiyor. Bileşiklerde RIR 2 (teknik ve toparlanma korunur), izolasyonlarda RIR 0-1 (risk düşük, getiri yüksek) bu yüzden.
 
-**Dinlenme.** 1 dk vs 3 dk karşılaştırmasında uzun dinlenme hem güçte hem quadriceps kalınlığında üstün çıktı; 1 dakika maksimum hipertrofi için kısa. Bileşiklerde 2,5-3 dk korundu — ama antagonist süperset sayesinde bu süre boş geçmiyor, karşıt kas çalışıyor.
+**Dinlenme.** 1 dk vs 3 dk karşılaştırmasında uzun dinlenme hem güçte hem quadriceps kalınlığında üstün çıktı; **1 dakika maksimum hipertrofi için kısa, 2 dakika yeterli**. Program bu eşiği kullanıyor: bileşiklerde 2 dk (squat'ta 3 dk, çünkü sistemik yorgunluğu en yüksek hareket), izolasyonlarda 60-90 sn. Süre kısıtı burada bilimin izin verdiği alt sınırdan karşılanıyor — set sayısından kısmak yerine.
 
-**Süperset.** 2025 sistematik derlemesi: süpersetler seans süresini **~%36 kısaltıyor**, kronik adaptasyonlarda (hipertrofi, maksimal güç) fark yok. Özellikle **agonist-antagonist** eşleştirme hacmi korumada en uygunu; aynı kası eşleştirmek hacmi düşürüyor. Program bu yüzden hep karşıt kasları eşleştiriyor: bench ↔ pulldown, RDL ↔ leg extension, row ↔ incline press. Not: süpersetler algılanan zorluğu ve iç yükü artırıyor — RIR'i dürüst tut.
+**Süperset — neden kullanılmıyor.** 2025 sistematik derlemesi süpersetlerin seans süresini ~%36 kısalttığını ve kronik adaptasyonlarda fark yaratmadığını gösteriyor; yani bilimsel olarak cazipler. Ama uygulanabilirlik bir ön koşul: süperset iki istasyonu aynı anda tutmayı gerektirir ve kalabalık bir salonda bu mümkün değil. Yapılamayan optimal plan, yapılabilen iyi plandan kötüdür — o yüzden düz setlere geçildi, kaybedilen süre dinlenme aralıklarından geri kazanıldı.
 
 **Kısmi tekrar / ROM.** Uzun kas boyunda yapılan kısmi tekrarlar, kısa boydakilere göre anlamlı üstün (ES 0,283). Tam ROM ile uzun-boy kısmiler ise benzer. Pratik karşılığı: **esneme pozisyonunu kısaltma** — pulldown'da tam uzat, incline press'te dibe in, leg curl'de tam aç.
 
@@ -128,7 +138,7 @@ Rampa setleri sayılmaz. Yüksek yoğunluklu ısınma (%80 civarı) toplam antre
 
 ## Ağırlık önerisi nasıl hesaplanıyor
 
-LOG ekranını açtığında **🎯 Sıradaki** kutusu çıkar. Öneri, o hareket için **son seansın kaydından** ve programdaki hedeften hesaplanır.
+LOG ekranını açtığında ağırlık ve tekrar alanları **önerilen değerlerle dolu gelir**; kutuda **🎯 Uygulandı** yazar ve hesabın gerekçesi görünür. Değeri elle değiştirdiysen **Geri yükle** butonu öneriyi tekrar basar. Öneri, o hareket için **son seansın kaydından** ve programdaki hedeften hesaplanır.
 
 **1. Tahmini 1RM (Epley + RIR).** Geçen seansın en iyi setinden:
 
@@ -161,7 +171,7 @@ Bu, klasik **çift ilerlemenin** RIR ile otoregüle edilmiş hâli: aralık içi
 
 **İlk kayıtta** geçmiş olmadığı için hesap yapılmaz; kutu hedef tekrar aralığını ve "ısınma setleriyle çıkıp hedef RIR'i yakalayan ağırlıkta kal" yönergesini gösterir. İkinci seanstan itibaren öneri devreye girer.
 
-**Uygula** butonu ağırlık ve tekrar alanlarını doldurur — RIR alanını kasıtlı olarak doldurmaz, çünkü o alan hedefi değil **gerçekleşeni** kaydetmeli.
+**RIR alanı kasıtlı olarak boş gelir** — o alan hedefi değil **gerçekleşeni** kaydetmeli. Boş bırakırsan hesap programın hedef RIR'ini varsayar ve kutuda bunu belirtir, ama girdiğin her RIR öneriyi doğrular.
 
 ## Ekipman yoksa — ikame tablosu
 
