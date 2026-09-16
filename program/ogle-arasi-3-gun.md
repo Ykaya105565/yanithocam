@@ -42,7 +42,7 @@ Alt gövde aletleri fotoğraflarda yok; Çarşamba günü barbell squat + leg pr
 
 Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 
-### SALI — Üst Gövde (~48 dk)
+### SALI — Üst Gövde (~54 dk)
 
 | # | Hareket | Set × Tekrar | RIR | Dinlenme |
 |---|---|---|---|---|
@@ -50,10 +50,11 @@ Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 | 2 | Lat Pulldown (supinated) | 4 × 8-10 | 2 | 2 dk |
 | 3 | Machine Row | 3 × 10-12 | 1-2 | 90 sn |
 | 4 | Incline Dumbbell Press | 3 × 8-12 | 1-2 | 90 sn |
-| 5 | Dumbbell Lateral Raise | 3 × 12-20 | 0-1 | 60 sn |
-| 6 | Machine Bicep Curl | 2 × 10-15 | 0-1 | 60 sn |
+| 5 | Dumbbell Lateral Raise | 4 × 12-20 | 0-1 | 60 sn |
+| 6 | Machine Bicep Curl | 3 × 10-15 | 0-1 | 45 sn |
+| 7 | Triceps Pushdown (halat) | 3 × 10-15 | 0-1 | 45 sn |
 
-### ÇARŞAMBA — Alt Gövde + Core (~50 dk)
+### ÇARŞAMBA — Alt Gövde + Core (~53 dk)
 
 | # | Hareket | Set × Tekrar | RIR | Dinlenme |
 |---|---|---|---|---|
@@ -61,10 +62,10 @@ Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 | 2 | Romanian Deadlift | 3 × 8-10 | 2 | 2 dk |
 | 3 | Leg Press | 3 × 10-12 | 1 | 2 dk |
 | 4 | Seated Leg Curl | 3 × 10-15 | 1 | 90 sn |
-| 5 | Standing Calf Raise | 2 × 10-15 | 0-1 | 60 sn |
-| 6 | Cable Crunch | 2 × 10-15 | 1 | 60 sn |
+| 5 | Standing Calf Raise | 4 × 10-15 | 0-1 | 45 sn |
+| 6 | Cable Crunch | 4 × 10-15 | 1 | 45 sn |
 
-### CUMA — Tüm Vücut (~47 dk)
+### CUMA — Tüm Vücut (~55 dk)
 
 | # | Hareket | Set × Tekrar | RIR | Dinlenme |
 |---|---|---|---|---|
@@ -72,8 +73,14 @@ Süperset yok. Bir hareketin tüm setlerini bitir, sonra diğerine geç.
 | 2 | Incline Barbell Bench Press | 3 × 6-10 | 2 | 2 dk |
 | 3 | Bulgarian Split Squat | 3 × 8-12/bacak | 1-2 | 2 dk |
 | 4 | Lying Leg Curl | 3 × 10-15 | 1 | 90 sn |
-| 5 | Dumbbell Lateral Raise | 3 × 12-20 | 0-1 | 60 sn |
-| 6 | Triceps Pushdown (halat) | 2 × 10-15 | 0-1 | 60 sn |
+| 5 | Dumbbell Lateral Raise | 4 × 12-20 | 0-1 | 60 sn |
+| 6 | Incline Dumbbell Curl | 3 × 10-15 | 0-1 | 45 sn |
+| 7 | Triceps Pushdown (halat) | 3 × 10-15 | 0-1 | 45 sn |
+| 8 | Standing Calf Raise | 2 × 10-15 | 0-1 | 45 sn |
+
+Son bloktaki izolasyon hareketleri **45 saniye** dinlenmeyle yapılıyor. Kısa dinlenme bileşiklerde sorun olurdu, izolasyonda değil — ve seansı bir saatlik pencerede tutan şey bu.
+
+**Zaman sıkışırsa:** en son bloktan (kol / baldır) kes, bileşiklerden asla. Bir haftalık eksik kol seti telafi edilebilir, atlanan squat edilemez.
 
 ### İstasyon doluysa
 
@@ -81,19 +88,21 @@ Bekleme. Sırayı bozup sonraki hareketi yap, dolu alete sonra dön. Hiçbiri ol
 
 ## Haftalık hacim (doğrudan set)
 
-| Kas | Salı | Çarşamba | Cuma | **Toplam** |
-|---|---|---|---|---|
-| Göğüs | 7 | — | 3 | **10** |
-| Sırt | 7 | — | 4 | **11** |
-| Quadriceps | — | 7 | 3 | **10** |
-| Hamstring | — | 6 | 3 | **9** |
-| Yan omuz | 3 | — | 3 | **6** |
-| Biceps | 2 | — | — | **2** (+11 çekiş seti dolaylı) |
-| Triceps | — | — | 2 | **2** (+10 itiş seti dolaylı) |
-| Baldır | — | 2 | — | **2** |
-| Core | — | 2 | — | **2** |
+| Kas | Salı | Çarşamba | Cuma | **Toplam** | Hedef |
+|---|---|---|---|---|---|
+| Sırt | 7 | — | 4 | **11** | 10-20 |
+| Göğüs | 7 | — | 3 | **10** | 10-20 |
+| Quadriceps | — | 7 | 3 | **10** | 8-20 |
+| Hamstring | — | 6 | 3 | **9** | 6-16 |
+| Omuz | 4 | — | 4 | **8** | 8-22 |
+| Biceps | 3 | — | 3 | **6** | 6-14 |
+| Triceps | 3 | — | 3 | **6** | 6-14 |
+| Baldır | — | 4 | 2 | **6** | 6-12 |
+| Core | — | 4 | — | **4** | 4-12 |
 
-Ana kas gruplarının hepsi 9-11 set bandında — meta-analizlerin "yanıt veren" aralığının (10-20) alt-orta kısmı. Sınırlı zamanda beklenen yer burası; hacmi artırmak istersen dördüncü gün eklemek, seansları uzatmaktan daha verimli olur.
+Toplam **70 set/hafta**. Dokuz kas grubunun hepsi hedef bandının içinde — uygulamadaki direktif paneli bu yüzden "hacim hedefte" diyor.
+
+Kol, omuz ve baldır sayıları bandın alt sınırında duruyor. Bu bilinçli: bunlar zaten 21 bileşik setten dolaylı yük alıyor ve sınırlı sürede öncelik bileşiklerde. Hacim artırmak istersen önce bu küçük kaslara set eklemek en ucuz yol — her biri seansa 1,5 dakika ekler.
 
 ## Neden böyle — bilimsel gerekçe
 
